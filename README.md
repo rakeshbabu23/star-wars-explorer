@@ -5,7 +5,7 @@ A React app that helps users explore and work with scripts. It fetches data from
 ## Demo
 
 You can view the live app here:  
-[Script Assist](https://starwars-gamma-ten.vercel.app/)
+[Star Wars Explorer](https://starwars-gamma-ten.vercel.app/)
 
 ## Features
 
@@ -57,4 +57,3 @@ You can view the live app here:
 
 This app is deployed on **Vercel** and can be accessed at:  
 [https://starwars-gamma-ten.vercel.app/](https://starwars-gamma-ten.vercel.app/)
-you have any questions or issues, please open an issue in the GitHub repository or contact me.
