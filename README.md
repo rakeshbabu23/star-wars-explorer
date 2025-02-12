@@ -25,7 +25,7 @@ You can view the live app here:
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/rakeshbabu23/script-assist.git
+    git clone https://github.com/rakeshbabu23/star-wars-explorer.git
     cd script-assist
     ```
 
