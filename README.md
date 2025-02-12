@@ -1,4 +1,4 @@
-# Script Assist
+# Star Wars Explorer
 
 A React app that helps users explore and work with scripts. It fetches data from external APIs and displays it in an interactive interface.
 
@@ -26,7 +26,7 @@ You can view the live app here:
 
     ```bash
     git clone https://github.com/rakeshbabu23/star-wars-explorer.git
-    cd script-assist
+    cd star-wars-explorer
     ```
 
 2. Install dependencies:
