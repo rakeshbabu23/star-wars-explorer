@@ -1,30 +1,33 @@
 import React from "react";
 import { useForm } from "@mantine/form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { handleLogin } from "../../../services/auth/auth.service";
+import {  useLocation, useNavigate } from "react-router-dom";
+import { handleSignup } from "../../../services/auth/auth.service";
 import { useAuthStore } from "../store/authStore";
-import { LoginFormValues } from "../types/types";
+import { SignupFormValues } from "../types/types";
 
-const useLogin = () => {
+const useSignup = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const login = useAuthStore((state) => state.login);
   const [loading, setLoading] = React.useState(false);
-  const form = useForm<LoginFormValues>({
+  const form = useForm<SignupFormValues>({
     initialValues: {
       email: "",
       password: "",
+      confirmPassword: "",
     },
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
       password: (value) =>
         value.length < 6 ? "Password must be at least 6 characters" : null,
+      confirmPassword: (value, values) =>
+        value !== values.password ? "Passwords do not match" : null,
     },
   });
-  const handleSubmit = async (values: LoginFormValues) => {
+  const handleSubmit = async (values: SignupFormValues) => {
     try {
       setLoading(true);
-      const response = await handleLogin(values);
+      const response = await handleSignup(values);
       if (response.success) {
         login(response.token!);
         navigate(location.state?.from || "/");
@@ -48,4 +51,4 @@ const useLogin = () => {
   };
 };
 
-export default useLogin;
+export default useSignup;

@@ -9,55 +9,15 @@ import {
     Stack,
     Text,
     Anchor,
-    useMantineTheme,
+    
     Loader
   } from '@mantine/core';
-  import { useForm } from '@mantine/form';
-  import { notifications } from '@mantine/notifications';
   import { Link } from 'react-router-dom';
+import useSignup from '../../features/auth/hooks/useSignup';
 
-  interface SignupFormValues {
-    email: string;
-    password: string;
-    confirmPassword: string;
-  }
   
   export function SignupPage() {
-    const form = useForm<SignupFormValues>({
-      initialValues: {
-        email: '',
-        password: '',
-        confirmPassword: '',
-      },
-      validate: {
-        email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-        password: (value) => (value.length < 6 ? 'Password must be at least 6 characters' : null),
-        confirmPassword: (value, values) => (value !== values.password ? 'Passwords do not match' : null),
-      },
-    });
-  
-    const [loading, setLoading] = React.useState(false);
-  
-    const handleSubmit = async (values: SignupFormValues) => {
-      try {
-        setLoading(true);
-
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        notifications.show({
-          title: 'Success',
-          message: 'Account created successfully',
-          color: 'green',
-        });
-      } catch (error) {
-        notifications.show({
-          title: 'Error',
-          message: 'Something went wrong',
-          color: 'red',
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
+    const { form, handleSubmit, loading } = useSignup();
   
     return (
       <Container size={420} my={40}>
