@@ -20,9 +20,9 @@ export const Home: React.FC = () => {
           <Title order={1} mb="xl"  className="landing-title">
             Welcome to the Star Wars Explorer
           </Title>
-          {/* <Text size="lg" className="landing-text">
+          <Text size="lg" className="landing-text">
             Experience the epic saga of Star Wars like never before
-          </Text> */}
+          </Text>
         </motion.div>
 
        
