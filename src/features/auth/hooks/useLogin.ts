@@ -1,12 +1,12 @@
 import React from "react";
 import { useForm } from "@mantine/form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import { handleLogin } from "../../../services/auth/auth.service";
 import { useAuthStore } from "../store/authStore";
 import { LoginFormValues } from "../types/types";
 
 const useLogin = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const location = useLocation();
   const login = useAuthStore((state) => state.login);
   const [loading, setLoading] = React.useState(false);
@@ -31,6 +31,7 @@ const useLogin = () => {
       } else {
         alert(response.message);  
       }
+      
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message);

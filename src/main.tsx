@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import App from './App';
-import LoginPage from './pages/LoginPage/Login';
-import SignupPage from './pages/SignupPage/Signup';
 import { FilmsPage } from './pages/FilmsPage/FilmsPage';
 import { FilmDetailsPage } from './pages/FilmDetailsPage/FilmDetailsPage';
 import NotFound from './pages/NotFoundPage/NotFound';
 import { ProtectedRoute } from './routes/ProtectedRoutes';
 import { PublicRoute } from './routes/PublicRoute';
 import FilmInformation from './pages/FIlmInformation/FilmInformation';
+import { Home } from './pages/LandingPage/Home';
+import { Login } from './pages/LoginPage/Login';
+import { Signup } from './pages/SignupPage/Signup';
 
 export const routes = [
 	{
@@ -18,7 +19,15 @@ export const routes = [
 	  element: <App />,
 	  children: [
 		{
-		  path: '/',
+			path: '/',
+			element: (
+			  <PublicRoute>
+				<Home />
+			  </PublicRoute>
+			),
+		  },
+		{
+		  path: '/films',
 		  element: (
 			<ProtectedRoute>
 			  <FilmsPage />
@@ -29,7 +38,7 @@ export const routes = [
 		  path: '/signin',
 		  element: (
 			<PublicRoute>
-			  <LoginPage />
+			  <Login />
 			</PublicRoute>
 		  ),
 		},
@@ -37,13 +46,13 @@ export const routes = [
 		  path: '/signup',
 		  element: (
 			<PublicRoute>
-			  <SignupPage />
+			  <Signup />
 			</PublicRoute>
 		  ),
 		},
 		{
 		  path: '/film/:id',
-		  element: (
+		  element: (	
 			<ProtectedRoute>
 			  <FilmDetailsPage />
 			</ProtectedRoute>

@@ -71,7 +71,7 @@ export const theme: Omit<MantineThemeOverride, 'colorScheme'> = {
 			styles: (theme) => ({
 			  label: {
 				fontSize: '1rem',
-				color: theme.colorScheme === 'dark' ? theme.white : '#000',
+				color:  '#fff' 
 			  },
 			  input: {
 				borderRadius: '2rem !important',
@@ -84,7 +84,7 @@ export const theme: Omit<MantineThemeOverride, 'colorScheme'> = {
 			styles: (theme) => ({
 				label: {
 				  fontSize: '1rem',
-				  color: theme.colorScheme === 'dark' ? theme.white : '#000',
+				  color:  theme.white 
 				},
 				input: {
 				  borderRadius: '2rem !important',
@@ -97,11 +97,11 @@ export const theme: Omit<MantineThemeOverride, 'colorScheme'> = {
 			styles: (theme) => ({
 				label: {
 				  fontSize: '1rem',
-				  color: theme.colorScheme === 'dark' ? theme.white : '#DCE7FCFF',
+				  color: theme.colorScheme === 'dark' ? theme.white : '#FFFFFF',
 				},
 				input: {
 				  borderRadius: '2rem !important',
-				  backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#DCE7FCFF',
+				  backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#FFFFFF',
 				}
 			  })
 		},
@@ -121,27 +121,33 @@ export const theme: Omit<MantineThemeOverride, 'colorScheme'> = {
 				}
 			  })
 		},
-		Button:{
+		Button:{			
 			styles: (theme) => ({
 				root: {
-				  backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#FFFFFF',
-				  color: theme.colorScheme === 'dark' ? theme.white : '#000',
+				  background: theme.fn.linearGradient(90, '#ffe81f', '#ffbb00'),
+				  color: 'black',
+				  fontWeight: 'bold',
+				  border: 'none',
 				  borderRadius: '2rem !important',
-				  border: `1px solid ${theme.colorScheme === 'dark' ? theme.white : '#000'}`,
+				  padding: '0.5rem',
+				  textTransform: 'uppercase',
+				  cursor: 'pointer',
+				  transition: 'all 0.3s ease-in-out',
+				  boxShadow: '0px 0px 10px rgba(255, 232, 31, 0.8)',
+			  
 				  '&:hover': {
-					backgroundColor: theme.colorScheme === 'dark' ? theme.white : '#000',
-					color: theme.colorScheme === 'dark' ? theme.black : '#FFFFFF',
+					transform: 'scale(1.05)',
+					boxShadow: '0px 0px 20px rgba(255, 232, 31, 1)',
 				  },
-				  '&[data-disabled]': {
-					backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : '#f0f0f0',
-					color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : '#a0a0a0',
-					borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : '#d0d0d0',
-					cursor: 'not-allowed',
+			  
+				  '&:active': {
+					transform: 'scale(0.95)',
 				  },
 				},
 			  })
+			  
 		},
-		// Badge:{
+		// Badge:{	
 		// 	styles: (theme) => ({
 		// 		root: {
 		// 			backgroundColor: theme.colorScheme === 'dark' ? theme.white : theme.black,

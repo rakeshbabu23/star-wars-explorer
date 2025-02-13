@@ -17,3 +17,5 @@ export const useAuthStore = create<AuthStore>((set) => ({
     set({ isAuthenticated: false });
   },
 }));
+
+

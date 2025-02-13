@@ -1,0 +1,45 @@
+.landing-page {
+    height: 100vh;
+    width:100vw;
+  background: url("https://wallpapers.com/images/featured/star-wars-logo-xcw4lfbj6xjx2qvm.jpg") center/cover no-repeat;
+    color: white;
+    backdrop-filter: blur(4px);
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .landing-container{
+    height: 100vh;
+    width:100vw; 
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    
+  }
+  .landing-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0px 0px 10px yellow;
+  }
+
+  
+  .landing-button-container {
+    margin-top: 2rem;
+  }
+  
+  .landing-button {
+    transition: transform 0.3s;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+  

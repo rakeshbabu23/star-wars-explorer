@@ -70,11 +70,11 @@ export const FilmDetailsPage: React.FC = () => {
 
                 <Group spacing="xl" direction={isMobile ? 'column' : 'row'}>
                   <Group spacing="xs">
-                    <User size={20} />
+                    <User color="green" size={20} />
                     <Text size="lg">Director: {film.director}</Text>
                   </Group>
                   <Group spacing="xs">
-                    <Landmark size={20} />
+                    <Landmark color="green" size={20} />
                     <Text size="lg">Producer: {film.producer}</Text>
                   </Group>
                 </Group>

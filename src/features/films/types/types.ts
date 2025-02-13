@@ -46,8 +46,18 @@ export interface Film {
     passengers: string;
     url: string;
   }
+  export interface Vehicle {
+    name: string;
+    model: string;
+    manufacturer: string;
+    cost_in_credits: string;
+    length: string;
+    crew: string;
+    passengers: string;
+    url: string;
+  }
 
   export interface FilmResource{
     resource:string[];
-    resourceName:'Planet'|'Starship'|'Character';
+    resourceName:'Planet'|'Starship'|'Character'|'Vehicle';
   }

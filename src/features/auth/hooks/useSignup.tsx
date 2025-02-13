@@ -30,7 +30,7 @@ const useSignup = () => {
       const response = await handleSignup(values);
       if (response.success) {
         login(response.token!);
-        navigate(location.state?.from || "/");
+        navigate(location.state?.from || "/films");
       } else {
         alert(response.message);  
       }
