@@ -71,18 +71,29 @@ export const FilmsPage: React.FC = () => {
               style={{ color: textColor }}
               >Discover the Star Wars Films</Title>
 
-              <Group position={isMobile ? 'center' : 'right'} spacing="md" style={{ width: '100%' }}>
-                <SearchBar
-                  value={searchQuery}
-                  onChange={setSearchQuery}
-                  style={{ flexGrow: 1 }}
-                />
-                <SortSelect
-                  value={sortBy}
-                  onChange={setSortBy}
-                  style={{ flexShrink: 0 }}
-                />
-              </Group>
+<Group 
+  position={isMobile ? 'center' : 'right'} 
+  spacing="md" 
+  style={{ width: '100%', flexWrap: 'wrap', justifyContent: isMobile ? 'center' : 'flex-end' }}
+>
+  <SearchBar
+    value={searchQuery}
+    onChange={setSearchQuery}
+    style={{ flexGrow: 1, minWidth: isMobile ? '100%' : 'auto' }} 
+  />
+
+  <Group spacing="xs" style={{ display: 'flex', alignItems: 'center' }}>
+    <Text size="sm" weight={500} style={{ color: textColor }}>
+      Sort By:
+    </Text>
+    <SortSelect
+      value={sortBy}
+      onChange={setSortBy}
+      style={{ flexShrink: 0 }}
+    />
+  </Group>
+</Group>
+
 
               <FilmsTable
                 data={filteredAndSortedData}
